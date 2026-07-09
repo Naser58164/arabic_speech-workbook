@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الكراسة العربية الشاملة لعلاج اضطرابات النطق</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+/* ── RESET & BASE ── */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Cairo',sans-serif;background:#FFF9F0;color:#2D3748;min-height:100vh;overflow-x:hidden}
+
+/* ── VARIABLES ── */
+:root{
+  --sky:#4FC3F7;--sky-d:#0288D1;
+  --purple:#7C4DFF;
+  --coral:#FF8A65;
+  --green:#2E7D32;
+  --gold:#F9A825;
+  --white:#FFFFFF;
+  --cream:#FFF9F0;
+  --border:#E2E8F0;
+  --text:#2D3748;
+  --muted:#718096;
+  --radius:18px;
+  --shadow:0 6px 24px rgba(0,0,0,0.09);
+}
+
+/* ── PAGES ── */
+.page{display:none}
+.page.active{display:block}
+
+/* ── TOP NAV ── */
+.nav{
+  background:var(--white);
+  padding:14px 20px;
+  display:flex;align-items:center;justify-content:space-between;
+  box-shadow:0 2px 12px rgba(0,0,0,0.07);
+  position:sticky;top:0;z-index:100;
+}
+.nav-logo{font-size:18px;font-weight:900;background:linear-gradient(135deg,var(--sky),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-btn{background:linear-gradient(135deg,var(--sky-d),var(--purple));color:#fff;border:none;padding:9px 18px;border-radius:50px;font-family:'Cairo',sans-serif;font-size:14px;font-weight:700;cursor:pointer}
+.stars-badge{display:flex;align-items:center;gap:6px;background:#FFF9C4;border:2px solid var(--gold);border-radius:50px;padding:6px 16px;font-weight:700;color:#F57F17}
+
+/* ── COVER ── */
+#cover{
+  background:linear-gradient(135deg,#4FC3F7 0%,#7C4DFF 55%,#FF4081 100%);
+  min-height:100vh;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;padding:40px 20px;
+}
+.cover-badge{background:rgba(255,255,255,0.2);border:2px solid rgba(255,255,255,0.4);color:#fff;padding:7px 22px;border-radius:50px;font-size:14px;font-weight:600;margin-bottom:20px;letter-spacing:1px}
+.cover-emoji{font-size:72px;margin-bottom:20px;animation:bounce 2s ease-in-out infinite}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.cover-title{font-size:clamp(28px,5vw,56px);font-weight:900;color:#fff;line-height:1.2;margin-bottom:12px;text-shadow:0 4px 20px rgba(0,0,0,0.2)}
+.cover-sub{font-size:clamp(14px,2.5vw,18px);color:rgba(255,255,255,0.85);margin-bottom:36px;line-height:1.6}
+.cover-stats{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-bottom:36px}
+.cover-stat{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:14px;padding:14px 20px;color:#fff;text-align:center}
+.cover-stat .n{font-size:26px;font-weight:900;display:block}
+.cover-stat .l{font-size:12px;opacity:.8}
+.btn-start{background:#fff;color:var(--purple);border:none;padding:16px 44px;border-radius:50px;font-family:'Cairo',sans-serif;font-size:18px;font-weight:700;cursor:pointer;box-shadow:0 8px 32px rgba(0,0,0,0.18);transition:transform .2s}
+.btn-start:hover{transform:translateY(-3px)}
+
+/* ── CONTAINER ── */
+.container{max-width:900px;margin:0 auto;padding:32px 16px 80px}
+.section-title{text-align:center;font-size:28px;font-weight:900;color:#1A1A2E;margin-bottom:6px}
+.section-sub{text-align:center;color:var(--muted);font-size:15px;margin-bottom:32px}
+
+/* ── CHAPTERS ── */
+.chapters-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px}
+.chapter-card{background:#fff;border-radius:var(--radius);padding:24px 16px;text-align:center;cursor:pointer;border:2px solid transparent;transition:all .3s;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.chapter-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--bar,linear-gradient(90deg,var(--sky),var(--purple)))}
+.chapter-card:hover{transform:translateY(-4px);border-color:var(--sky)}
+.chapter-card .ci{font-size:38px;margin-bottom:10px}
+.chapter-card .ct{font-weight:700;font-size:15px;color:#1A1A2E;margin-bottom:3px}
+.chapter-card .cs{font-size:12px;color:var(--muted)}
+
+/* ── LETTERS GRID ── */
+.letters-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(76px,1fr));gap:10px}
+.letter-btn{background:#fff;border:2px solid var(--border);border-radius:14px;padding:14px 6px;text-align:center;cursor:pointer;transition:all .2s;position:relative}
+.letter-btn:hover{border-color:var(--sky);background:#EBF8FF;transform:scale(1.05)}
+.letter-btn.done{border-color:var(--green);background:#F0FFF4}
+.letter-btn.done::after{content:'✓';position:absolute;top:4px;left:4px;font-size:11px;color:var(--green);font-weight:700}
+.letter-btn .la{font-size:26px;font-weight:700;color:#1A1A2E;display:block}
+.letter-btn .ln{font-size:10px;color:var(--muted);display:block;margin-top:2px}
+
+/* ── LESSON ── */
+.lesson-header{background:linear-gradient(135deg,var(--sky),var(--purple));border-radius:var(--radius);padding:28px;color:#fff;display:flex;align-items:center;gap:20px;margin-bottom:28px;flex-wrap:wrap}
+.lesson-letter-big{width:100px;height:100px;border-radius:50%;background:rgba(255,255,255,0.2);border:3px solid rgba(255,255,255,0.4);display:flex;align-items:center;justify-content:center;font-size:52px;font-weight:900;flex-shrink:0}
+.lesson-header-info h1{font-size:24px;font-weight:800;margin-bottom:6px}
+.lesson-header-info p{font-size:14px;opacity:.88;line-height:1.6}
+
+/* ── TABS ── */
+.tabs{display:flex;gap:6px;flex-wrap:wrap;border-bottom:2px solid var(--border);margin-bottom:22px;padding-bottom:0}
+.tab-btn{padding:10px 16px;border:none;background:none;font-family:'Cairo',sans-serif;font-size:13px;font-weight:600;color:var(--muted);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;border-radius:8px 8px 0 0;transition:all .2s}
+.tab-btn.active{color:var(--purple);border-bottom-color:var(--purple);background:rgba(124,77,255,.06)}
+.tab-pane{display:none}
+.tab-pane.active{display:block}
+
+/* ── CARDS ── */
+.card{background:#fff;border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);margin-bottom:20px}
+.card h3{font-size:18px;font-weight:700;color:#1A1A2E;margin-bottom:18px;display:flex;align-items:center;gap:8px}
+
+/* ── ANATOMY IMAGE ── */
+.anatomy-img-wrap{border-radius:14px;overflow:hidden;border:3px solid var(--border);background:#f8f8f8;text-align:center}
+.anatomy-img-wrap img{width:100%;max-height:360px;object-fit:contain;display:block}
+.anatomy-label{background:#1A1A2E;color:#fff;padding:10px 16px;font-size:13px;font-weight:600;font-family:'Cairo',sans-serif}
+
+.art-points{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-top:14px}
+.art-point{background:#EEF2FF;border-radius:12px;padding:12px 14px;border:2px solid #C4B5FD;display:flex;gap:8px;align-items:flex-start}
+.art-dot{width:9px;height:9px;border-radius:50%;background:var(--purple);margin-top:5px;flex-shrink:0}
+.art-point p{font-size:13px;line-height:1.5;color:var(--text)}
+
+/* ── STEPS ── */
+.steps-list{display:flex;flex-direction:column;gap:10px}
+.step-item{background:#fff;border:2px solid var(--border);border-radius:14px;padding:14px 18px;display:flex;align-items:center;gap:14px;transition:border-color .2s}
+.step-item:hover{border-color:var(--sky)}
+.step-num{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--sky-d),var(--purple));color:#fff;font-size:17px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.step-text{font-size:15px;font-weight:500;line-height:1.5}
+
+/* ── SYLLABLES ── */
+.syllables-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px}
+.syl-card{background:#fff;border-radius:14px;padding:18px;text-align:center;cursor:pointer;border:2px solid var(--border);transition:all .2s}
+.syl-card:hover{border-color:var(--sky);transform:scale(1.04)}
+.syl-card.played{border-color:var(--green);background:#F0FFF4}
+.syl-card .syl{font-size:32px;font-weight:800;color:#1A1A2E}
+.syl-card .syl-pos{font-size:11px;color:var(--muted);margin-top:4px}
+
+/* ── WORDS ── */
+.words-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:14px;margin-bottom:20px}
+.word-card{background:#fff;border-radius:14px;padding:18px 14px;text-align:center;border:2px solid var(--border);cursor:pointer;transition:all .2s}
+.word-card:hover{border-color:var(--coral);transform:translateY(-3px)}
+.word-card.correct{border-color:var(--green);background:#F0FFF4}
+.word-card.wrong{border-color:#FC8181;background:#FFF5F5}
+.word-card .we{font-size:44px;margin-bottom:8px}
+.word-card .wt{font-size:18px;font-weight:700;color:#1A1A2E;margin-bottom:3px}
+.word-card .ws{font-size:11px;color:var(--muted)}
+
+/* ── SENTENCES ── */
+.sent-card{background:#fff;border-radius:14px;padding:18px 22px;border:2px solid var(--border);margin-bottom:10px;display:flex;align-items:center;gap:14px;cursor:pointer;transition:border-color .2s}
+.sent-card:hover{border-color:#CE93D8}
+.sent-card .se{font-size:28px;flex-shrink:0}
+.sent-card .st{font-size:19px;font-weight:600;flex:1}
+.sent-card .sm{color:#CE93D8;font-size:16px}
+
+/* ── GAME ── */
+.game-area{background:linear-gradient(135deg,#1A1A2E,#16213E);border-radius:var(--radius);padding:28px;color:#fff;text-align:center;margin-bottom:20px}
+.game-title{font-size:20px;font-weight:800;margin-bottom:6px}
+.game-sub{font-size:13px;opacity:.7;margin-bottom:22px}
+.game-items{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.game-item{background:rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.2);border-radius:12px;width:76px;height:76px;display:flex;align-items:center;justify-content:center;font-size:36px;cursor:pointer;transition:all .2s}
+.game-item:hover{background:rgba(255,255,255,.2);transform:scale(1.1)}
+.game-item.correct-pick{border-color:#68D391;background:rgba(104,211,145,.2);animation:pop .4s}
+.game-item.wrong-pick{border-color:#FC8181;background:rgba(252,129,129,.15);animation:shake .3s}
+@keyframes pop{0%,100%{transform:scale(1)}50%{transform:scale(1.25)}}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.game-score-box{margin-top:18px;font-size:16px;font-weight:700;opacity:.9}
+
+/* ── VIDEO ── */
+.video-box{background:#000;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.video-header{padding:12px 18px;display:flex;align-items:center;gap:10px;color:#fff}
+.video-header .vt{font-size:14px;font-weight:700}
+.video-header .vs{font-size:11px;opacity:.8;margin-top:2px}
+.video-responsive{position:relative;padding-bottom:56.25%;height:0;overflow:hidden}
+.video-responsive video,
+.video-responsive iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
+.video-placeholder{position:absolute;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a1a2e,#16213e);cursor:pointer;transition:opacity .2s}
+.video-placeholder:hover{opacity:.88}
+.vp-icon{font-size:52px;margin-bottom:10px}
+.vp-text{color:#fff;font-size:15px;font-weight:700;font-family:'Cairo',sans-serif}
+.vp-sub{color:rgba(255,255,255,.6);font-size:12px;margin-top:5px;font-family:'Cairo',sans-serif}
+.video-note{padding:10px 16px;font-size:12px;font-family:'Cairo',sans-serif;border-top:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.7)}
+.mirror-hint{background:#FFF9F0;border:2px solid var(--gold);border-radius:14px;padding:14px 18px;display:flex;gap:12px;margin-top:16px;align-items:flex-start}
+.mirror-hint .mi{font-size:26px;flex-shrink:0}
+.mirror-hint p{font-size:13px;line-height:1.6;color:#78350F}
+
+/* ── RATING ── */
+.rating-row{display:flex;align-items:center;justify-content:space-between;padding:13px 0;border-bottom:1px solid var(--border);flex-wrap:wrap;gap:8px}
+.rating-row:last-child{border-bottom:none}
+.rating-label{font-weight:600;font-size:14px}
+.stars{display:flex;gap:4px}
+.star{font-size:22px;cursor:pointer;color:#D1D5DB;transition:transform .1s}
+.star.lit{color:var(--gold)}
+.star:hover{transform:scale(1.2)}
+
+/* ── PARENT LOG ── */
+.log-form{display:grid;gap:12px}
+.log-form label{font-size:12px;font-weight:600;color:var(--muted);display:block;margin-bottom:3px}
+.log-form input,.log-form select,.log-form textarea{width:100%;padding:11px 14px;border:2px solid var(--border);border-radius:12px;font-family:'Cairo',sans-serif;font-size:14px;color:var(--text);outline:none;transition:border-color .2s}
+.log-form input:focus,.log-form select:focus,.log-form textarea:focus{border-color:var(--sky)}
+.log-form textarea{min-height:76px;resize:vertical}
+.btn-save{background:linear-gradient(135deg,var(--green),#1B5E20);color:#fff;border:none;padding:13px 28px;border-radius:12px;font-family:'Cairo',sans-serif;font-size:15px;font-weight:700;cursor:pointer;width:100%;transition:opacity .2s}
+.btn-save:hover{opacity:.9}
+
+/* ── BREATHING ── */
+.breath-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px}
+.breath-card{background:#fff;border-radius:var(--radius);padding:24px 16px;text-align:center;cursor:pointer;transition:all .3s;border:2px solid var(--border);box-shadow:var(--shadow)}
+.breath-card:hover{border-color:var(--sky);transform:translateY(-3px)}
+.breath-card .bi{font-size:48px;margin-bottom:10px}
+.breath-card .bn{font-size:15px;font-weight:700;color:#1A1A2E;margin-bottom:5px}
+.breath-card .bd{font-size:12px;color:var(--muted);line-height:1.5}
+.breath-timer{background:linear-gradient(135deg,var(--sky),var(--purple));border-radius:var(--radius);padding:36px;text-align:center;color:#fff;margin-top:20px;display:none}
+.breath-timer.on{display:block}
+.breath-circle{width:130px;height:130px;border-radius:50%;background:rgba(255,255,255,.2);border:5px solid rgba(255,255,255,.5);display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:800;margin:0 auto 14px;transition:all .5s}
+.breath-instruction{font-size:20px;font-weight:700;margin-bottom:6px}
+.breath-sub{font-size:13px;opacity:.8}
+.btn-stop{margin-top:14px;background:rgba(255,255,255,.2);color:#fff;border:2px solid rgba(255,255,255,.4);padding:9px 22px;border-radius:50px;font-family:'Cairo',sans-serif;font-size:13px;font-weight:600;cursor:pointer}
+
+/* ── ACHIEVEMENTS ── */
+.ach-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:10px}
+.ach-item{background:#fff;border-radius:14px;padding:18px 10px;text-align:center;border:2px solid var(--border)}
+.ach-item.unlocked{border-color:var(--gold);background:linear-gradient(135deg,#FFFDE7,#FFF8E1)}
+.ach-item .ai{font-size:36px;margin-bottom:6px;filter:grayscale(1);opacity:.4}
+.ach-item.unlocked .ai{filter:none;opacity:1}
+.ach-item .an{font-size:11px;font-weight:600;color:var(--muted)}
+.ach-item.unlocked .an{color:#1A1A2E}
+.progress-wrap{background:var(--border);border-radius:50px;height:10px;overflow:hidden;margin-bottom:8px}
+.progress-fill{height:100%;border-radius:50px;background:linear-gradient(90deg,var(--sky),var(--purple));transition:width .5s}
+
+/* ── ANATOMY CHAPTER ── */
+.parts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:14px}
+.part-card{background:#fff;border-radius:var(--radius);padding:22px;text-align:center;cursor:pointer;transition:all .3s;border:2px solid transparent;box-shadow:var(--shadow)}
+.part-card:hover{border-color:#CE93D8;transform:translateY(-3px)}
+.part-card .pi{font-size:48px;margin-bottom:10px}
+.part-card .pn{font-size:16px;font-weight:700;color:#1A1A2E;margin-bottom:5px}
+.part-card .pf{font-size:12px;color:var(--muted);line-height:1.5}
+
+/* ── TONGUE CHAPTER ── */
+.tongue-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.tongue-card{background:#fff;border-radius:var(--radius);padding:22px;display:flex;gap:14px;border:2px solid var(--border);cursor:pointer;transition:border-color .2s;box-shadow:var(--shadow)}
+.tongue-card:hover{border-color:var(--sky)}
+.tongue-card .ti{font-size:44px;flex-shrink:0}
+.tongue-card h4{font-size:14px;font-weight:700;margin-bottom:5px}
+.tongue-card p{font-size:12px;color:var(--muted);line-height:1.5}
+.tongue-badges{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
+.t-badge{background:var(--sky);color:#fff;padding:3px 10px;border-radius:50px;font-size:13px;font-weight:700}
+
+/* ── CERT MODAL ── */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(8px);z-index:1000;display:none;align-items:center;justify-content:center;padding:20px}
+.modal-overlay.open{display:flex}
+.cert{background:#fff;border-radius:22px;padding:44px;max-width:440px;width:100%;text-align:center;border:4px solid var(--gold);box-shadow:0 0 0 8px rgba(249,168,37,.15),0 32px 64px rgba(0,0,0,.3);position:relative}
+.cert-ribbon{position:absolute;top:-18px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--gold),var(--coral));color:#fff;padding:7px 22px;border-radius:50px;font-size:12px;font-weight:700;white-space:nowrap}
+.cert-icon{font-size:72px;margin-bottom:14px}
+.cert-title{font-size:26px;font-weight:900;color:#1A1A2E;margin-bottom:8px}
+.cert-letter{font-size:18px;color:var(--purple);font-weight:700;margin-bottom:8px}
+.cert-body{font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:22px}
+.btn-cert-close{background:linear-gradient(135deg,var(--purple),var(--sky));color:#fff;border:none;padding:13px 30px;border-radius:12px;font-family:'Cairo',sans-serif;font-size:15px;font-weight:700;cursor:pointer}
+
+/* ── TOAST ── */
+.toast{position:fixed;bottom:22px;right:22px;background:#1A1A2E;color:#fff;padding:12px 22px;border-radius:12px;font-size:13px;font-weight:600;z-index:2000;opacity:0;transform:translateY(10px);transition:all .3s;pointer-events:none}
+.toast.show{opacity:1;transform:translateY(0)}
+
+/* ── UTILITY ── */
+.tip-box{background:#FFF9F0;border:2px solid var(--gold);border-radius:12px;padding:13px 16px;font-size:13px;color:#78350F;line-height:1.6;margin-top:14px}
+
+/* ── RESPONSIVE ── */
+@media(max-width:600px){
+  .syllables-grid{grid-template-columns:repeat(2,1fr)}
+  .tongue-grid{grid-template-columns:1fr}
+  .lesson-header{flex-direction:column;text-align:center}
+  .cover-stats{gap:10px}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ COVER ═══ -->
+<div id="cover" class="page active">
+  <div class="cover-badge">📚 كراسة علاجية احترافية</div>
+  <div class="cover-emoji">🦜🧒👧🎯</div>
+  <h1 class="cover-title">الكراسة العربية الشاملة<br>لعلاج اضطرابات النطق</h1>
+  <p class="cover-sub">مبنية على أحدث مبادئ Articulation Therapy<br>Visual Feedback • Gamification • للأطفال ٣–٨ سنوات</p>
+  <div class="cover-stats">
+    <div class="cover-stat"><span class="n">٢٨</span><span class="l">حرفاً عربياً</span></div>
+    <div class="cover-stat"><span class="n">٥</span><span class="l">فصول علمية</span></div>
+    <div class="cover-stat"><span class="n">٥</span><span class="l">فيديوهات</span></div>
+    <div class="cover-stat"><span class="n">٢٨</span><span class="l">صورة تشريحية</span></div>
+  </div>
+  <button class="btn-start" onclick="go('chapters')">ابدأ الكراسة ▶</button>
+</div>
+
+<!-- ═══ CHAPTERS ═══ -->
+<div id="chapters" class="page">
+  <nav class="nav">
+    <button class="nav-btn" onclick="go('cover')">◀ الرئيسية</button>
+    <span class="nav-logo">كراسة النطق</span>
+    <div class="stars-badge">⭐ <span id="s1">0</span></div>
+  </nav>
+  <div class="container">
+    <h2 class="section-title">📖 فهرس الكراسة</h2>
+    <p class="section-sub">اختر الفصل الذي تريد البدء به</p>
+    <div class="chapters-grid">
+      <div class="chapter-card" onclick="goChapter('anatomy')" style="--bar:linear-gradient(90deg,#CE93D8,#7C4DFF)">
+        <div class="ci">🫦</div><div class="ct">الفصل الأول</div><div class="cs">جهاز النطق</div>
+      </div>
+      <div class="chapter-card" onclick="goChapter('tongue')" style="--bar:linear-gradient(90deg,#80CBC4,#00897B)">
+        <div class="ci">👅</div><div class="ct">الفصل الثاني</div><div class="cs">أوضاع اللسان</div>
+      </div>
+      <div class="chapter-card" onclick="goChapter('breathing')" style="--bar:linear-gradient(90deg,#4FC3F7,#0288D1)">
+        <div class="ci">🫧</div><div class="ct">الفصل الثالث</div><div class="cs">تدريب التنفس</div>
+      </div>
+      <div class="chapter-card" onclick="go('letters')" style="--bar:linear-gradient(90deg,#FF8A65,#E64A19)">
+        <div class="ci">🔤</div><div class="ct">الفصل الرابع</div><div class="cs">تدريب الحروف (٢٨ حرفاً)</div>
+      </div>
+      <div class="chapter-card" onclick="goChapter('achievements')" style="--bar:linear-gradient(90deg,#FFD54F,#F9A825)">
+        <div class="ci">🏆</div><div class="ct">الفصل الخامس</div><div class="cs">الإنجازات والشهادات</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ CHAPTER PAGE ═══ -->
+<div id="chapter" class="page">
+  <nav class="nav">
+    <button class="nav-btn" onclick="go('chapters')">◀ الفصول</button>
+    <span class="nav-logo" id="chapterTitle">الفصل</span>
+    <div class="stars-badge">⭐ <span id="s2">0</span></div>
+  </nav>
+  <div class="container" id="chapterContent"></div>
+</div>
+
+<!-- ═══ LETTERS ═══ -->
+<div id="letters" class="page">
+  <nav class="nav">
+    <button class="nav-btn" onclick="go('chapters')">◀ الفصول</button>
+    <span class="nav-logo">الحروف العربية</span>
+    <div class="stars-badge">⭐ <span id="s3">0</span></div>
+  </nav>
+  <div class="container">
+    <h2 class="section-title">🔤 اختر الحرف</h2>
+    <p class="section-sub">٢٨ حرفاً • كل حرف ٨ تبويبات تدريبية</p>
+    <div class="letters-grid" id="lettersGrid"></div>
+  </div>
+</div>
+
+<!-- ═══ LESSON ═══ -->
+<div id="lesson" class="page">
+  <nav class="nav">
+    <button class="nav-btn" onclick="go('letters')">◀ الحروف</button>
+    <span class="nav-logo" id="lessonTitle">درس الحرف</span>
+    <div class="stars-badge">⭐ <span id="s4">0</span></div>
+  </nav>
+  <div class="container" id="lessonContent"></div>
+</div>
+
+<!-- ═══ CERT MODAL ═══ -->
+<div class="modal-overlay" id="certModal">
+  <div class="cert">
+    <div class="cert-ribbon">🏆 شهادة إنجاز</div>
+    <div class="cert-icon">🥇</div>
+    <h2 class="cert-title">بطل النطق!</h2>
+    <p class="cert-letter" id="certText">أحسنت!</p>
+    <p class="cert-body">استمر في التدريب لتصبح بطل النطق العربي! 🌟</p>
+    <button class="btn-cert-close" onclick="closeCert()">رائع! متابعة ▶</button>
+  </div>
+</div>
+
+<!-- ═══ TOAST ═══ -->
+<div class="toast" id="toast"></div>
+
+<script src="js/data.js"></script>
+<script>
+// ══════════════════════════════════════════════
+// STATE
+// ══════════════════════════════════════════════
+let totalStars = 0;
+let doneLetters = new Set();
+let currentIdx  = 0;
+let gameScore   = 0;
+let wordState   = {};   // idx → 'correct'|'wrong'|null
+let sylState    = {};   // idx → bool
+let ratings     = {};   // letterIdx → {row: stars}
+let breathTimer = null;
+
+// ══════════════════════════════════════════════
+// NAVIGATION
+// ══════════════════════════════════════════════
+function go(pageId) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById(pageId).classList.add('active');
+  syncStars();
+  window.scrollTo(0, 0);
+  // Save state
+  saveState();
+}
+
+function syncStars() {
+  ['s1','s2','s3','s4'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = totalStars;
+  });
+}
+
+// ══════════════════════════════════════════════
+// LETTERS GRID
+// ══════════════════════════════════════════════
+function buildLettersGrid() {
+  const grid = document.getElementById('lettersGrid');
+  grid.innerHTML = '';
+  LETTERS.forEach((l, i) => {
+    const btn = document.createElement('div');
+    btn.className = 'letter-btn' + (doneLetters.has(i) ? ' done' : '');
+    btn.style.borderColor = l.color;
+    btn.innerHTML = `<span class="la">${l.ar}</span><span class="ln">${l.name}</span>`;
+    btn.onclick = () => openLesson(i);
+    grid.appendChild(btn);
+  });
+}
+
+// ══════════════════════════════════════════════
+// LESSON
+// ══════════════════════════════════════════════
+function openLesson(idx) {
+  currentIdx = idx;
+  gameScore  = 0;
+  wordState  = {};
+  sylState   = {};
+  const l = LETTERS[idx];
+
+  document.getElementById('lessonTitle').textContent = `حرف ${l.ar} — ${l.name}`;
+  document.getElementById('lessonContent').innerHTML = buildLesson(l, idx);
+  go('lesson');
+}
+
+function buildLesson(l, idx) {
+  const sylPositions = ['بداية الكلمة','وسط الكلمة','نهاية الكلمة'];
+  const soundType = getSoundType(l.ar);
+  const airFlow   = getAirFlow(l.ar);
+
+  return `
+  <div class="lesson-header">
+    <div class="lesson-letter-big">${l.ar}</div>
+    <div class="lesson-header-info">
+      <h1>حرف ${l.ar} — ${l.name}</h1>
+      <p>المخرج: ${l.place}<br>${l.detail}</p>
+    </div>
+  </div>
+
+  <div class="tabs" id="tabs-${idx}">
+    <button class="tab-btn active" onclick="switchTab('anatomy',${idx},this)">🫦 التشريح</button>
+    <button class="tab-btn" onclick="switchTab('video',${idx},this)">▶ الفيديو</button>
+    <button class="tab-btn" onclick="switchTab('steps',${idx},this)">📋 الخطوات</button>
+    <button class="tab-btn" onclick="switchTab('syllables',${idx},this)">🔤 المقاطع</button>
+    <button class="tab-btn" onclick="switchTab('words',${idx},this)">📝 الكلمات</button>
+    <button class="tab-btn" onclick="switchTab('sentences',${idx},this)">💬 الجمل</button>
+    <button class="tab-btn" onclick="switchTab('game',${idx},this)">🎮 اللعبة</button>
+    <button class="tab-btn" onclick="switchTab('rating',${idx},this)">⭐ التقييم</button>
+    <button class="tab-btn" onclick="switchTab('log',${idx},this)">📒 سجل الوالدين</button>
+  </div>
+
+  <!-- ANATOMY -->
+  <div id="tab-anatomy-${idx}" class="tab-pane active">
+    <div class="card">
+      <h3>🫦 المخرج التشريحي — حرف ${l.ar}</h3>
+      <div class="anatomy-img-wrap">
+        <div class="anatomy-label">مخرج حرف ${l.ar} — ${l.name} | ${l.place}</div>
+        <img src="images/${l.img}.jpg" alt="مخرج حرف ${l.ar}" loading="lazy" onerror="this.style.display='none'">
+      </div>
+      <div class="art-points">
+        <div class="art-point"><div class="art-dot"></div><p><strong>المخرج:</strong> ${l.place}</p></div>
+        <div class="art-point"><div class="art-dot"></div><p><strong>طريقة الإنتاج:</strong> ${l.detail}</p></div>
+        <div class="art-point"><div class="art-dot"></div><p><strong>نوع الصوت:</strong> ${soundType}</p></div>
+        <div class="art-point"><div class="art-dot"></div><p><strong>الهواء:</strong> ${airFlow}</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VIDEO -->
+  <div id="tab-video-${idx}" class="tab-pane">
+    ${buildVideoTab(l, idx)}
+  </div>
+
+  <!-- STEPS -->
+  <div id="tab-steps-${idx}" class="tab-pane">
+    <div class="card">
+      <h3>📋 كيف أنطق حرف ${l.ar}؟</h3>
+      <div class="steps-list">
+        ${l.steps.map((s,i) => `
+          <div class="step-item">
+            <div class="step-num">${i+1}</div>
+            <div class="step-text">${s}</div>
+          </div>`).join('')}
+      </div>
+      <div class="tip-box">💡 قدِّم كل خطوة أمام المرآة مع الطفل، وكرر كل خطوة ٣ مرات قبل الانتقال للتالية.</div>
+    </div>
+  </div>
+
+  <!-- SYLLABLES -->
+  <div id="tab-syllables-${idx}" class="tab-pane">
+    <div class="card">
+      <h3>🔤 تدريب المقاطع — حرف ${l.ar}</h3>
+      <div class="syllables-grid">
+        ${l.syllables.map((s,i) => `
+          <div class="syl-card" id="syl-${idx}-${i}" onclick="playSyl(${idx},${i},'${s}')">
+            <div class="syl">${s}</div>
+            <div class="syl-pos">${sylPositions[i % 3]}</div>
+          </div>`).join('')}
+      </div>
+      <p style="text-align:center;color:var(--muted);font-size:13px">انقر على كل مقطع لتسجيل التدريب</p>
+    </div>
+  </div>
+
+  <!-- WORDS -->
+  <div id="tab-words-${idx}" class="tab-pane">
+    <div class="card">
+      <h3>📝 كلمات بحرف ${l.ar}</h3>
+      <div class="words-grid">
+        ${l.words.map((w,i) => `
+          <div class="word-card" id="word-${idx}-${i}" onclick="rateWord(${idx},${i})">
+            <div class="we">${w.e}</div>
+            <div class="wt">${w.w}</div>
+            <div class="ws">انقر للتقييم</div>
+          </div>`).join('')}
+      </div>
+      <p style="text-align:center;color:var(--muted);font-size:12px">انقر مرة: ✅ صحيح | مرتين: ❌ | ثلاث: إعادة</p>
+    </div>
+  </div>
+
+  <!-- SENTENCES -->
+  <div id="tab-sentences-${idx}" class="tab-pane">
+    <div class="card">
+      <h3>💬 جمل بحرف ${l.ar}</h3>
+      ${l.sentences.map((s,i) => `
+        <div class="sent-card" onclick="practiceSent(${idx})">
+          <div class="se">🗣️</div>
+          <div class="st">${s}</div>
+          <div class="sm">▶</div>
+        </div>`).join('')}
+      <div class="tip-box">📌 اطلب من الطفل قراءة الجملة ببطء أولاً، ثم بشكل طبيعي. انتبه لنطق حرف ${l.ar}.</div>
+    </div>
+  </div>
+
+  <!-- GAME -->
+  <div id="tab-game-${idx}" class="tab-pane">
+    <div class="game-area">
+      <div class="game-title">${l.game.title}</div>
+      <div class="game-sub">انقر على كل صورة تبدأ بحرف ${l.ar}</div>
+      <div class="game-items">
+        ${l.game.items.map((item,i) => `
+          <div class="game-item" id="gi-${idx}-${i}" onclick="pickItem(${idx},${i},${item.c})">${item.e}</div>`).join('')}
+      </div>
+      <div class="game-score-box">النقاط: <span id="gscore-${idx}">0</span> / ${l.game.items.filter(x=>x.c).length}</div>
+    </div>
+  </div>
+
+  <!-- RATING -->
+  <div id="tab-rating-${idx}" class="tab-pane">
+    <div class="card">
+      <h3>⭐ تقييم الأخصائي — حرف ${l.ar}</h3>
+      ${['النطق منفرداً','المقاطع','الكلمات','الجمل','الكلام التلقائي'].map((label,ri) => `
+        <div class="rating-row">
+          <span class="rating-label">${label}</span>
+          <div class="stars" id="rating-${idx}-${ri}">
+            ${[1,2,3,4,5].map(s => `<span class="star" onclick="setStar(${idx},${ri},${s},this)">★</span>`).join('')}
+          </div>
+        </div>`).join('')}
+      <button class="btn-save" onclick="saveRating(${idx})" style="margin-top:18px">💾 حفظ التقييم</button>
+    </div>
+  </div>
+
+  <!-- LOG -->
+  <div id="tab-log-${idx}" class="tab-pane">
+    <div class="card">
+      <h3>📒 متابعة المنزل — حرف ${l.ar}</h3>
+      <div class="log-form">
+        <div><label>📅 التاريخ</label><input type="date" id="ld-${idx}" value="${new Date().toISOString().split('T')[0]}"></div>
+        <div><label>🔢 عدد مرات التدريب</label><input type="number" id="lt-${idx}" placeholder="مثال: 5" min="1"></div>
+        <div><label>⏱️ مدة التدريب (دقائق)</label><input type="number" id="ldur-${idx}" placeholder="مثال: 15" min="1"></div>
+        <div><label>🏆 أفضل كلمة نطقها الطفل</label><input type="text" id="lw-${idx}" placeholder="اكتب الكلمة هنا..."></div>
+        <div><label>📊 المستوى العام</label>
+          <select id="ll-${idx}">
+            <option value="">-- اختر --</option>
+            <option>⭐⭐⭐⭐⭐ ممتاز</option>
+            <option>⭐⭐⭐⭐ جيد جداً</option>
+            <option>⭐⭐⭐ جيد</option>
+            <option>⭐⭐ يحتاج تدريباً</option>
+          </select>
+        </div>
+        <div><label>📝 ملاحظات</label><textarea id="ln-${idx}" placeholder="أي تقدم أو ملاحظة..."></textarea></div>
+        <button class="btn-save" onclick="saveLog(${idx})">💾 حفظ سجل اليوم</button>
+      </div>
+    </div>
+  </div>
+  `;
+}
+
+function buildVideoTab(l, idx) {
+  const videoFile = l.video ? VIDEO_FILES[l.video] : null;
+
+  if (videoFile) {
+    return `
+    <div class="video-box">
+      <div class="video-header" style="background:linear-gradient(135deg,#2E7D32,#1B5E20);">
+        <div style="font-size:22px">🎬</div>
+        <div><div class="vt">فيديو حصري — مخرج حرف ${l.ar} (${l.name})</div>
+             <div class="vs">✅ فيديو توضيحي دقيق — يعمل بدون إنترنت</div></div>
+      </div>
+      <div class="video-responsive">
+        <video controls playsinline preload="metadata" style="background:#000;">
+          <source src="${videoFile}" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-note">🎬 فيديو خاص بحرف ${l.ar} مضمّن في الكراسة</div>
+    </div>
+    <div class="mirror-hint">
+      <div class="mi">🪞</div>
+      <p><strong>Visual Feedback:</strong> شاهد الفيديو ٣٠ ثانية، ثم قف أمام المرآة وقلّد حركة اللسان بالضبط. كرر ٣ مرات.</p>
+    </div>`;
+  } else {
+    const ts = l.ts || 0;
+    const mm = Math.floor(ts/60), ss = ts % 60;
+    const tsStr = `${mm}:${ss.toString().padStart(2,'0')}`;
+    return `
+    <div class="video-box">
+      <div class="video-header" style="background:#CC0000;">
+        <div style="font-size:22px">▶</div>
+        <div><div class="vt">مخرج حرف ${l.ar} — ${l.name}</div>
+             <div class="vs">عبر YouTube — يحتاج إنترنت</div></div>
+      </div>
+      <div class="video-responsive" id="vwrap-${idx}">
+        <div class="video-placeholder" onclick="loadYT(${idx},${ts})">
+          <div class="vp-icon">▶</div>
+          <div class="vp-text">شاهد مخرج حرف ${l.ar}</div>
+          <div class="vp-sub">انقر لتشغيل الفيديو (${tsStr})</div>
+        </div>
+      </div>
+      <div class="video-note">📌 يبدأ الفيديو عند مخرج حرف ${l.ar} (${tsStr})</div>
+    </div>
+    <div class="mirror-hint">
+      <div class="mi">🪞</div>
+      <p><strong>Visual Feedback:</strong> شاهد الفيديو ٣٠ ثانية، ثم قف أمام المرآة وقلّد حركة اللسان بالضبط. كرر ٣ مرات.</p>
+    </div>`;
+  }
+}
+
+// ══════════════════════════════════════════════
+// TABS
+// ══════════════════════════════════════════════
+function switchTab(tabId, idx, btn) {
+  const container = document.getElementById(`tabs-${idx}`);
+  container.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  ['anatomy','video','steps','syllables','words','sentences','game','rating','log'].forEach(id => {
+    const el = document.getElementById(`tab-${id}-${idx}`);
+    if (el) el.classList.toggle('active', id === tabId);
+  });
+}
+
+// ══════════════════════════════════════════════
+// YOUTUBE PLAYER
+// ══════════════════════════════════════════════
+function loadYT(idx, ts) {
+  const wrap = document.getElementById(`vwrap-${idx}`);
+  if (!wrap) return;
+  const iframe = document.createElement('iframe');
+  iframe.src = `https://www.youtube.com/embed/60oSsdqXWYU?start=${ts}&autoplay=1&rel=0&modestbranding=1`;
+  iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+  iframe.allowFullscreen = true;
+  wrap.innerHTML = '';
+  wrap.appendChild(iframe);
+}
+
+// ══════════════════════════════════════════════
+// GAME
+// ══════════════════════════════════════════════
+function pickItem(idx, i, correct) {
+  const el = document.getElementById(`gi-${idx}-${i}`);
+  if (el.classList.contains('correct-pick') || el.classList.contains('wrong-pick')) return;
+  if (correct) {
+    el.classList.add('correct-pick');
+    gameScore++;
+    document.getElementById(`gscore-${idx}`).textContent = gameScore;
+    addStars(2);
+    toast('إصابة! 🎯');
+    const total = LETTERS[idx].game.items.filter(x=>x.c).length;
+    if (gameScore >= total) setTimeout(() => { addStars(5); toast('أكملت اللعبة! 🏆 +5 نجوم'); }, 400);
+  } else {
+    el.classList.add('wrong-pick');
+    toast('حاول مرة أخرى 💪');
+  }
+}
+
+// ══════════════════════════════════════════════
+// SYLLABLES
+// ══════════════════════════════════════════════
+function playSyl(idx, i, syl) {
+  const el = document.getElementById(`syl-${idx}-${i}`);
+  if (!el.classList.contains('played')) {
+    el.classList.add('played');
+    addStars(1);
+    toast(`أحسنت! "${syl}" ⭐`);
+  }
+}
+
+// ══════════════════════════════════════════════
+// WORDS
+// ══════════════════════════════════════════════
+function rateWord(idx, i) {
+  const el = document.getElementById(`word-${idx}-${i}`);
+  const label = el.querySelector('.ws');
+  const l = LETTERS[idx];
+  if (!el.classList.contains('correct') && !el.classList.contains('wrong')) {
+    el.classList.add('correct');
+    label.textContent = '✅ نطق صحيح';
+    addStars(2);
+    toast(`رائع! "${l.words[i].w}" ✅`);
+  } else if (el.classList.contains('correct')) {
+    el.classList.remove('correct');
+    el.classList.add('wrong');
+    label.textContent = '❌ يحتاج تدريباً';
+  } else {
+    el.classList.remove('wrong');
+    label.textContent = 'انقر للتقييم';
+  }
+}
+
+// ══════════════════════════════════════════════
+// SENTENCES
+// ══════════════════════════════════════════════
+function practiceSent(idx) {
+  addStars(3);
+  toast('ممتاز! جملة رائعة 🌟');
+}
+
+// ══════════════════════════════════════════════
+// RATING
+// ══════════════════════════════════════════════
+function setStar(idx, row, stars, el) {
+  const container = document.getElementById(`rating-${idx}-${row}`);
+  container.querySelectorAll('.star').forEach((s, i) => s.classList.toggle('lit', i < stars));
+  if (!ratings[idx]) ratings[idx] = {};
+  ratings[idx][row] = stars;
+}
+
+function saveRating(idx) {
+  addStars(5);
+  doneLetters.add(idx);
+  toast('تم حفظ التقييم ✅ +5 نجوم');
+  buildLettersGrid();
+  if (doneLetters.size % 5 === 0) showCert(idx);
+  saveState();
+}
+
+// ══════════════════════════════════════════════
+// LOG
+// ══════════════════════════════════════════════
+function saveLog(idx) {
+  const times = document.getElementById(`lt-${idx}`).value;
+  const word  = document.getElementById(`lw-${idx}`).value;
+  if (!times && !word) { toast('يرجى ملء الحقول أولاً'); return; }
+  addStars(3);
+  toast('تم حفظ السجل ✅ +3 نجوم');
+  document.getElementById(`lt-${idx}`).value   = '';
+  document.getElementById(`ldur-${idx}`).value = '';
+  document.getElementById(`lw-${idx}`).value   = '';
+  document.getElementById(`ln-${idx}`).value   = '';
+  saveState();
+}
+
+// ══════════════════════════════════════════════
+// STARS & TOAST
+// ══════════════════════════════════════════════
+function addStars(n) {
+  totalStars += n;
+  syncStars();
+}
+
+function toast(msg) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  setTimeout(() => el.classList.remove('show'), 2000);
+}
+
+// ══════════════════════════════════════════════
+// CERTIFICATE
+// ══════════════════════════════════════════════
+function showCert(idx) {
+  document.getElementById('certText').textContent = `أتقنت ${doneLetters.size} حروف! 🌟`;
+  document.getElementById('certModal').classList.add('open');
+}
+
+function closeCert() {
+  document.getElementById('certModal').classList.remove('open');
+}
+
+// ══════════════════════════════════════════════
+// SOUND TYPE HELPERS
+// ══════════════════════════════════════════════
+function getSoundType(ar) {
+  if ('بتدطكقض'.includes(ar)) return 'ب'==='ب' && 'بدضطق'.includes(ar) ? 'انفجاري مجهور' : 'انفجاري مهموس';
+  if ('فسصشحخهثذظ'.includes(ar)) return 'احتكاكي';
+  if ('من'.includes(ar)) return 'أنفي';
+  if (ar === 'ل') return 'جانبي';
+  if (ar === 'ر') return 'ارتدادي';
+  return 'مد (شبه صائت)';
+}
+
+function getAirFlow(ar) {
+  if ('من'.includes(ar)) return 'يخرج من الأنف';
+  if ('بتدطكقء'.includes(ar)) return 'يُحبَس ثم يُطلَق بانفجار';
+  if (ar === 'ل') return 'يخرج من جانبي اللسان';
+  if ('حخهع'.includes(ar)) return 'يخرج باحتكاك من الحلق';
+  return 'يخرج من الفم باحتكاك';
+}
+
+// ══════════════════════════════════════════════
+// CHAPTERS
+// ══════════════════════════════════════════════
+function goChapter(type) {
+  const titles = {anatomy:'الفصل الأول: جهاز النطق', tongue:'الفصل الثاني: أوضاع اللسان', breathing:'الفصل الثالث: تدريب التنفس', achievements:'الإنجازات والشهادات'};
+  document.getElementById('chapterTitle').textContent = titles[type] || 'الفصل';
+  document.getElementById('chapterContent').innerHTML = buildChapter(type);
+  go('chapter');
+}
+
+function buildChapter(type) {
+  if (type === 'anatomy') return `
+    <h2 class="section-title">🫦 جهاز النطق</h2>
+    <p class="section-sub">تعرّف على أعضاء النطق ووظيفة كل عضو</p>
+    <div class="parts-grid">
+      ${[
+        {i:'👄',n:'الشفتان',f:'تتحكمان في شكل الفم. تُستخدمان في: ب، م، و، ف'},
+        {i:'🦷',n:'الأسنان',f:'توفر نقطة تلامس للسان في: ث، ذ، ظ، ف'},
+        {i:'👅',n:'اللسان',f:'أهم عضو نطقي — يتحكم في معظم مخارج الحروف'},
+        {i:'🏠',n:'اللثة',f:'خلف الأسنان العليا. مخرج: ت، د، ن، ل، ر، س، ص، ز'},
+        {i:'🪨',n:'الحنك الصلب',f:'سقف الفم الأمامي. مخرج: ج، ش، ي'},
+        {i:'🌊',n:'الحنك الرخو',f:'سقف الفم الخلفي. مخرج: ك، ق، غ، خ'},
+        {i:'💧',n:'اللهاة',f:'الزائدة المتدلية في آخر الحنك الرخو'},
+        {i:'🎵',n:'الحنجرة',f:'الأوتار الصوتية تهتز لتنتج الأصوات المجهورة'}
+      ].map(p => `
+        <div class="part-card" onclick="addStars(1)">
+          <div class="pi">${p.i}</div>
+          <div class="pn">${p.n}</div>
+          <div class="pf">${p.f}</div>
+        </div>`).join('')}
+    </div>`;
+
+  if (type === 'tongue') return `
+    <h2 class="section-title">👅 أوضاع اللسان</h2>
+    <p class="section-sub">الأوضاع الأربعة للسان وأثرها في مخارج الحروف</p>
+    <div class="tongue-grid">
+      ${[
+        {i:'⬆️',n:'طرف اللسان',d:'يرتفع طرف اللسان ليلامس اللثة أو الأسنان العليا',ex:['ت','د','ن','ل','ر','س','ص','ز'],c:'#4FC3F7'},
+        {i:'🔼',n:'وسط اللسان',d:'يرتفع وسط ظهر اللسان نحو الحنك الصلب',ex:['ج','ش','ي'],c:'#CE93D8'},
+        {i:'🔙',n:'مؤخرة اللسان',d:'يرتفع جذر اللسان نحو الحنك الرخو',ex:['ك','ق','غ','خ'],c:'#FF8A65'},
+        {i:'↔️',n:'جانبا اللسان',d:'جانب اللسان يلامس الأضراس العليا — خاص بالضاد',ex:['ض'],c:'#A5D6A7'}
+      ].map(t => `
+        <div class="tongue-card" onclick="addStars(1)">
+          <div class="ti">${t.i}</div>
+          <div>
+            <h4 style="color:${t.c}">${t.n}</h4>
+            <p>${t.d}</p>
+            <div class="tongue-badges">
+              ${t.ex.map(e => `<span class="t-badge" style="background:${t.c}">${e}</span>`).join('')}
+            </div>
+          </div>
+        </div>`).join('')}
+    </div>`;
+
+  if (type === 'breathing') return `
+    <h2 class="section-title">🫧 تدريب التنفس</h2>
+    <p class="section-sub">ابدأ بها قبل كل جلسة — أساس علاج النطق</p>
+    <div class="breath-grid">
+      ${[
+        {i:'🫧',n:'نفخ الفقاعات',d:'انفخ ببطء لإنتاج فقاعات كبيرة',dur:10,ins:['استنشق','انفخ ببطء','شاهد الفقاعات']},
+        {i:'🎈',n:'نفخ البالون',d:'انفخ البالون تدريجياً',dur:8,ins:['استنشق عميقاً','ضع فمك على البالون','انفخ ببطء']},
+        {i:'🪶',n:'تحريك الريشة',d:'انفخ لتحريك ريشة خفيفة',dur:6,ins:['استنشق','وجّه الهواء','انفخ برفق']},
+        {i:'🚂',n:'صوت القطار',d:'قل "تش تش" بإيقاع منتظم',dur:12,ins:['استنشق','قل تش بإيقاع','كرر']},
+        {i:'🐍',n:'صوت الثعبان',d:'قل "سسسس" لأطول وقت ممكن',dur:15,ins:['استنشق عميقاً','قل سسسس...','أطول فترة']},
+        {i:'🕯️',n:'إطفاء الشمعة',d:'انفخ لإطفاء شمعة خيالية',dur:5,ins:['استنشق','ركّز هواءك','انفخ بدقة']}
+      ].map((ex,i) => `
+        <div class="breath-card" onclick="startBreath(${i},${ex.dur},'${ex.ins.join('|')}')">
+          <div class="bi">${ex.i}</div>
+          <div class="bn">${ex.n}</div>
+          <div class="bd">${ex.d}</div>
+        </div>`).join('')}
+    </div>
+    <div class="breath-timer" id="breathTimer">
+      <div class="breath-circle" id="breathCircle">○</div>
+      <div class="breath-instruction" id="breathIns">استعد...</div>
+      <div class="breath-sub" id="breathSub">اتبع الإيقاع</div>
+      <button class="btn-stop" onclick="stopBreath()">⏹ إيقاف</button>
+    </div>`;
+
+  if (type === 'achievements') {
+    const pct = Math.round(doneLetters.size / 28 * 100);
+    return `
+    <h2 class="section-title">🏆 لوحة الإنجازات</h2>
+    <p class="section-sub">جمعت <strong>${totalStars}</strong> نجمة • أتقنت <strong>${doneLetters.size}</strong> حرفاً من ٢٨</p>
+    <div class="card">
+      <div class="progress-wrap"><div class="progress-fill" style="width:${pct}%"></div></div>
+      <p style="text-align:center;font-size:14px;color:var(--muted)">${pct}% من الحروف مكتملة</p>
+    </div>
+    <div class="ach-grid">
+      ${[
+        {i:'🌟',n:'أول حرف',req:1,type:'letters'},
+        {i:'⭐',n:'٥ حروف',req:5,type:'letters'},
+        {i:'🥉',n:'١٠ حروف',req:10,type:'letters'},
+        {i:'🥈',n:'١٥ حرفاً',req:15,type:'letters'},
+        {i:'🥇',n:'٢٠ حرفاً',req:20,type:'letters'},
+        {i:'🏆',n:'جميع الحروف',req:28,type:'letters'},
+        {i:'🎯',n:'١٠٠ نجمة',req:100,type:'stars'},
+        {i:'💫',n:'٢٥٠ نجمة',req:250,type:'stars'},
+        {i:'🌈',n:'٥٠٠ نجمة',req:500,type:'stars'},
+        {i:'👑',n:'١٠٠٠ نجمة',req:1000,type:'stars'},
+      ].map(a => {
+        const unlocked = a.type === 'letters' ? doneLetters.size >= a.req : totalStars >= a.req;
+        return `<div class="ach-item ${unlocked?'unlocked':''}">
+          <div class="ai">${a.i}</div>
+          <div class="an">${a.n}</div>
+        </div>`;
+      }).join('')}
+    </div>
+    <div style="text-align:center;margin-top:28px">
+      <button class="btn-save" style="max-width:260px" onclick="showCert(0)">🥇 عرض الشهادة</button>
+    </div>`;
+  }
+  return '';
+}
+
+// ══════════════════════════════════════════════
+// BREATHING TIMER
+// ══════════════════════════════════════════════
+let breathIdx = 0, breathIns = [], breathCount = 0, breathDur = 0;
+
+function startBreath(exIdx, dur, insStr) {
+  breathIns = insStr.split('|');
+  breathDur = dur;
+  breathCount = 0;
+  breathIdx = 0;
+  const timer = document.getElementById('breathTimer');
+  timer.classList.add('on');
+  if (breathTimer) clearInterval(breathTimer);
+  breathTimer = setInterval(() => {
+    if (breathCount >= breathDur) {
+      clearInterval(breathTimer);
+      timer.classList.remove('on');
+      addStars(3);
+      toast('أحسنت! ✅ +3 نجوم');
+      return;
+    }
+    const circle = document.getElementById('breathCircle');
+    const ins    = document.getElementById('breathIns');
+    ins.textContent = breathIns[breathIdx % breathIns.length];
+    circle.textContent = breathDur - breathCount;
+    circle.style.transform = breathIdx % 2 === 0 ? 'scale(1.3)' : 'scale(0.9)';
+    breathIdx++;
+    breathCount++;
+  }, 1000);
+}
+
+function stopBreath() {
+  if (breathTimer) clearInterval(breathTimer);
+  const timer = document.getElementById('breathTimer');
+  if (timer) timer.classList.remove('on');
+}
+
+// ══════════════════════════════════════════════
+// LOCALSTORAGE — PERSIST PROGRESS
+// ══════════════════════════════════════════════
+function saveState() {
+  try {
+    localStorage.setItem('wb_stars', totalStars);
+    localStorage.setItem('wb_done', JSON.stringify([...doneLetters]));
+    localStorage.setItem('wb_ratings', JSON.stringify(ratings));
+  } catch(e) {}
+}
+
+function loadState() {
+  try {
+    const s = localStorage.getItem('wb_stars');
+    if (s) totalStars = parseInt(s) || 0;
+    const d = localStorage.getItem('wb_done');
+    if (d) doneLetters = new Set(JSON.parse(d));
+    const r = localStorage.getItem('wb_ratings');
+    if (r) ratings = JSON.parse(r);
+  } catch(e) {}
+}
+
+// ══════════════════════════════════════════════
+// INIT
+// ══════════════════════════════════════════════
+loadState();
+buildLettersGrid();
+syncStars();
+</script>
+</body>
+</html>
