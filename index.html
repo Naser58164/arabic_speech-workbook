@@ -585,52 +585,27 @@ function buildLesson(l, idx) {
 }
 
 function buildVideoTab(l, idx) {
-  const videoFile = l.video ? VIDEO_FILES[l.video] : null;
-
-  if (videoFile) {
-    return `
+  const videoFile = VIDEO_FILES[l.video];
+  return `
     <div class="video-box">
       <div class="video-header" style="background:linear-gradient(135deg,#2E7D32,#1B5E20);">
         <div style="font-size:22px">🎬</div>
-        <div><div class="vt">فيديو حصري — مخرج حرف ${l.ar} (${l.name})</div>
-             <div class="vs">✅ فيديو توضيحي دقيق — يعمل بدون إنترنت</div></div>
+        <div>
+          <div class="vt">مخرج حرف ${l.ar} — ${l.name}</div>
+          <div class="vs">✅ فيديو توضيحي دقيق — يعمل بدون إنترنت</div>
+        </div>
       </div>
       <div class="video-responsive">
         <video controls playsinline preload="metadata" style="background:#000;">
           <source src="${videoFile}" type="video/mp4">
         </video>
       </div>
-      <div class="video-note">🎬 فيديو خاص بحرف ${l.ar} مضمّن في الكراسة</div>
+      <div class="video-note">📌 فيديو مخرج حرف ${l.ar}</div>
     </div>
     <div class="mirror-hint">
       <div class="mi">🪞</div>
       <p><strong>Visual Feedback:</strong> شاهد الفيديو ٣٠ ثانية، ثم قف أمام المرآة وقلّد حركة اللسان بالضبط. كرر ٣ مرات.</p>
     </div>`;
-  } else {
-    const ts = l.ts || 0;
-    const mm = Math.floor(ts/60), ss = ts % 60;
-    const tsStr = `${mm}:${ss.toString().padStart(2,'0')}`;
-    return `
-    <div class="video-box">
-      <div class="video-header" style="background:#CC0000;">
-        <div style="font-size:22px">▶</div>
-        <div><div class="vt">مخرج حرف ${l.ar} — ${l.name}</div>
-             <div class="vs">عبر YouTube — يحتاج إنترنت</div></div>
-      </div>
-      <div class="video-responsive" id="vwrap-${idx}">
-        <div class="video-placeholder" onclick="loadYT(${idx},${ts})">
-          <div class="vp-icon">▶</div>
-          <div class="vp-text">شاهد مخرج حرف ${l.ar}</div>
-          <div class="vp-sub">انقر لتشغيل الفيديو (${tsStr})</div>
-        </div>
-      </div>
-      <div class="video-note">📌 يبدأ الفيديو عند مخرج حرف ${l.ar} (${tsStr})</div>
-    </div>
-    <div class="mirror-hint">
-      <div class="mi">🪞</div>
-      <p><strong>Visual Feedback:</strong> شاهد الفيديو ٣٠ ثانية، ثم قف أمام المرآة وقلّد حركة اللسان بالضبط. كرر ٣ مرات.</p>
-    </div>`;
-  }
 }
 
 // ══════════════════════════════════════════════
@@ -646,19 +621,7 @@ function switchTab(tabId, idx, btn) {
   });
 }
 
-// ══════════════════════════════════════════════
-// YOUTUBE PLAYER
-// ══════════════════════════════════════════════
-function loadYT(idx, ts) {
-  const wrap = document.getElementById(`vwrap-${idx}`);
-  if (!wrap) return;
-  const iframe = document.createElement('iframe');
-  iframe.src = `https://www.youtube.com/embed/60oSsdqXWYU?start=${ts}&autoplay=1&rel=0&modestbranding=1`;
-  iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-  iframe.allowFullscreen = true;
-  wrap.innerHTML = '';
-  wrap.appendChild(iframe);
-}
+
 
 // ══════════════════════════════════════════════
 // GAME
