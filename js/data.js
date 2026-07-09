@@ -11,7 +11,7 @@ const LETTERS = [
     words:[{w:'أسد',e:'🦁'},{w:'أرنب',e:'🐰'},{w:'أخضر',e:'🟢'},{w:'أمي',e:'👩'},{w:'آلة',e:'🔧'},{w:'أسماك',e:'🐟'}],
     sentences:['أنا أحب أمي.','الأسد كبير.','الأرنب أبيض.'],
     game:{title:'صيد الألف 🎣',items:[{e:'🦁',c:true},{e:'🌸',c:false},{e:'🐰',c:true},{e:'🍕',c:false},{e:'👩',c:true},{e:'🌊',c:false},{e:'🔧',c:true},{e:'🎸',c:false}]},
-    color:'#4FC3F7', ts:10
+    color:'#4FC3F7'
   },
   {
     ar:'ب', name:'باء', img:'baa', video:'baa',
@@ -21,7 +21,7 @@ const LETTERS = [
     words:[{w:'باب',e:'🚪'},{w:'بيت',e:'🏠'},{w:'بطة',e:'🦆'},{w:'برتقال',e:'🍊'},{w:'بحر',e:'🌊'},{w:'باص',e:'🚌'}],
     sentences:['بابا كبير.','البطة جميلة.','أحب البرتقال.'],
     game:{title:'صيد الباء 🎣',items:[{e:'🚪',c:true},{e:'🌙',c:false},{e:'🏠',c:true},{e:'🍕',c:false},{e:'🦆',c:true},{e:'⭐',c:false},{e:'🍊',c:true},{e:'🐱',c:false}]},
-    color:'#FF8A65', ts:45
+    color:'#FF8A65'
   },
   {
     ar:'ت', name:'تاء', img:'taa', video:'taa',
@@ -31,7 +31,7 @@ const LETTERS = [
     words:[{w:'تفاح',e:'🍎'},{w:'تمر',e:'🌴'},{w:'تمساح',e:'🐊'},{w:'تلفاز',e:'📺'},{w:'تراب',e:'🌱'},{w:'توت',e:'🫐'}],
     sentences:['التفاح أحمر.','أحب التمر.','التلفاز كبير.'],
     game:{title:'اصطاد التاء 🎯',items:[{e:'🍎',c:true},{e:'🌊',c:false},{e:'🌴',c:true},{e:'🐟',c:false},{e:'🐊',c:true},{e:'🌸',c:false},{e:'📺',c:true},{e:'🎸',c:false}]},
-    color:'#CE93D8', ts:80
+    color:'#CE93D8'
   },
   {
     ar:'ث', name:'ثاء', img:'thaa', video:'thaa',
@@ -41,7 +41,7 @@ const LETTERS = [
     words:[{w:'ثعلب',e:'🦊'},{w:'ثلج',e:'❄️'},{w:'ثور',e:'🐂'},{w:'ثمرة',e:'🍒'},{w:'ثياب',e:'👕'},{w:'ثمانية',e:'8️⃣'}],
     sentences:['الثعلب ذكي.','الثلج أبيض.','الثور قوي.'],
     game:{title:'اصطاد الثاء ❄️',items:[{e:'🦊',c:true},{e:'🌙',c:false},{e:'❄️',c:true},{e:'🍕',c:false},{e:'🐂',c:true},{e:'🎮',c:false},{e:'🍒',c:true},{e:'🌊',c:false}]},
-    color:'#80CBC4', ts:115
+    color:'#80CBC4'
   },
   {
     ar:'ج', name:'جيم', img:'jeem', video:'jeem',
@@ -51,7 +51,7 @@ const LETTERS = [
     words:[{w:'جمل',e:'🐪'},{w:'جبل',e:'⛰️'},{w:'جزرة',e:'🥕'},{w:'جرس',e:'🔔'},{w:'جناح',e:'🦋'},{w:'جنة',e:'🌺'}],
     sentences:['الجمل كبير.','الجبل عالٍ.','الجزرة برتقالية.'],
     game:{title:'اصطاد الجيم 🐪',items:[{e:'🐪',c:true},{e:'🌙',c:false},{e:'⛰️',c:true},{e:'🍕',c:false},{e:'🥕',c:true},{e:'⭐',c:false},{e:'🔔',c:true},{e:'🐟',c:false}]},
-    color:'#A5D6A7', ts:150
+    color:'#A5D6A7'
   },
   {
     ar:'ح', name:'حاء', img:'haa', video:'haa',
@@ -61,7 +61,7 @@ const LETTERS = [
     words:[{w:'حصان',e:'🐴'},{w:'حمامة',e:'🕊️'},{w:'حليب',e:'🥛'},{w:'حقيبة',e:'🎒'},{w:'حوت',e:'🐋'},{w:'حديقة',e:'🌳'}],
     sentences:['الحصان جميل.','الحليب أبيض.','الحوت ضخم.'],
     game:{title:'اصطاد الحاء 🐴',items:[{e:'🐴',c:true},{e:'🌙',c:false},{e:'🕊️',c:true},{e:'🍕',c:false},{e:'🥛',c:true},{e:'🎸',c:false},{e:'🎒',c:true},{e:'🌊',c:false}]},
-    color:'#FFAB91', ts:185
+    color:'#FFAB91'
   },
   {
     ar:'خ', name:'خاء', img:'khaa', video:'khaa',
@@ -71,7 +71,7 @@ const LETTERS = [
     words:[{w:'خروف',e:'🐑'},{w:'خبز',e:'🍞'},{w:'خيمة',e:'⛺'},{w:'خضروات',e:'🥦'},{w:'خريف',e:'🍂'},{w:'خريطة',e:'🗺️'}],
     sentences:['الخروف يأكل العشب.','الخبز لذيذ.','الخيمة كبيرة.'],
     game:{title:'اصطاد الخاء 🐑',items:[{e:'🐑',c:true},{e:'🌙',c:false},{e:'🍞',c:true},{e:'🐟',c:false},{e:'⛺',c:true},{e:'⭐',c:false},{e:'🥦',c:true},{e:'🎮',c:false}]},
-    color:'#F8BBD0', ts:220
+    color:'#F8BBD0'
   },
   {
     ar:'د', name:'دال', img:'dal', video:'dal',
@@ -81,7 +81,7 @@ const LETTERS = [
     words:[{w:'دب',e:'🐻'},{w:'دجاج',e:'🐔'},{w:'دراجة',e:'🚲'},{w:'دفتر',e:'📓'},{w:'دلفين',e:'🐬'},{w:'دواء',e:'💊'}],
     sentences:['الدب كبير.','الدجاج يبيض.','أحب الدراجة.'],
     game:{title:'اصطاد الدال 🐻',items:[{e:'🐻',c:true},{e:'🌸',c:false},{e:'🐔',c:true},{e:'🍕',c:false},{e:'🚲',c:true},{e:'🌊',c:false},{e:'📓',c:true},{e:'🎸',c:false}]},
-    color:'#B2DFDB', ts:255
+    color:'#B2DFDB'
   },
   {
     ar:'ذ', name:'ذال', img:'thal', video:'thal',
@@ -91,7 +91,7 @@ const LETTERS = [
     words:[{w:'ذئب',e:'🐺'},{w:'ذرة',e:'🌽'},{w:'ذهب',e:'🥇'},{w:'ذباب',e:'🪰'},{w:'ذيل',e:'🐈'},{w:'ذاكرة',e:'🧠'}],
     sentences:['الذئب يعوي.','الذرة صفراء.','الذهب لامع.'],
     game:{title:'اصطاد الذال 🐺',items:[{e:'🐺',c:true},{e:'🌙',c:false},{e:'🌽',c:true},{e:'🍕',c:false},{e:'🥇',c:true},{e:'⭐',c:false},{e:'🪰',c:true},{e:'🎮',c:false}]},
-    color:'#E8F5E9', ts:290
+    color:'#E8F5E9'
   },
   {
     ar:'ر', name:'راء', img:'raa', video:'raa',
@@ -101,7 +101,7 @@ const LETTERS = [
     words:[{w:'رأس',e:'🙂'},{w:'ربيع',e:'🌸'},{w:'رسالة',e:'✉️'},{w:'رياضة',e:'⚽'},{w:'رسام',e:'🎨'},{w:'روضة',e:'🏫'}],
     sentences:['الربيع جميل.','أحب الرياضة.','الرسام موهوب.'],
     game:{title:'اصطاد الراء 🌀',items:[{e:'🙂',c:true},{e:'🌙',c:false},{e:'🌸',c:true},{e:'🐟',c:false},{e:'✉️',c:true},{e:'🎸',c:false},{e:'⚽',c:true},{e:'🍕',c:false}]},
-    color:'#E3F2FD', ts:325
+    color:'#E3F2FD'
   },
   {
     ar:'ز', name:'زاي', img:'zay', video:'zay',
@@ -111,7 +111,7 @@ const LETTERS = [
     words:[{w:'زهرة',e:'🌹'},{w:'زرافة',e:'🦒'},{w:'زيتون',e:'🫒'},{w:'زلزال',e:'🌍'},{w:'زبدة',e:'🧈'},{w:'زرقاء',e:'💙'}],
     sentences:['الزهرة حمراء.','الزرافة طويلة.','الزيتون لذيذ.'],
     game:{title:'اصطاد الزاي 🐝',items:[{e:'🌹',c:true},{e:'🌙',c:false},{e:'🦒',c:true},{e:'🍕',c:false},{e:'🫒',c:true},{e:'⭐',c:false},{e:'🧈',c:true},{e:'🎮',c:false}]},
-    color:'#FFF9C4', ts:360
+    color:'#FFF9C4'
   },
   {
     ar:'س', name:'سين', img:'seen', video:'seen',
@@ -121,7 +121,7 @@ const LETTERS = [
     words:[{w:'سمكة',e:'🐟'},{w:'سيارة',e:'🚗'},{w:'سماء',e:'☁️'},{w:'سلحفاة',e:'🐢'},{w:'ساعة',e:'⏰'},{w:'سنجاب',e:'🐿️'}],
     sentences:['السماء زرقاء.','السيارة سريعة.','السمكة في البحر.'],
     game:{title:'اصطاد السين 🐟',items:[{e:'🐟',c:true},{e:'🌙',c:false},{e:'🚗',c:true},{e:'🍕',c:false},{e:'☁️',c:true},{e:'🎸',c:false},{e:'🐢',c:true},{e:'🌹',c:false}]},
-    color:'#E0F7FA', ts:395
+    color:'#E0F7FA'
   },
   {
     ar:'ش', name:'شين', img:'sheen', video:'sheen',
@@ -131,7 +131,7 @@ const LETTERS = [
     words:[{w:'شمس',e:'☀️'},{w:'شجرة',e:'🌳'},{w:'شوكولاتة',e:'🍫'},{w:'شاطئ',e:'🏖️'},{w:'شمعة',e:'🕯️'},{w:'شرطي',e:'👮'}],
     sentences:['الشمس مضيئة.','الشجرة خضراء.','أحب الشوكولاتة.'],
     game:{title:'اصطاد الشين ☀️',items:[{e:'☀️',c:true},{e:'🌙',c:false},{e:'🌳',c:true},{e:'🐟',c:false},{e:'🍫',c:true},{e:'⭐',c:false},{e:'🏖️',c:true},{e:'🍕',c:false}]},
-    color:'#E8EAF6', ts:430
+    color:'#E8EAF6'
   },
   {
     ar:'ص', name:'صاد', img:'sad', video:'sad',
@@ -141,7 +141,7 @@ const LETTERS = [
     words:[{w:'صقر',e:'🦅'},{w:'صاروخ',e:'🚀'},{w:'صابون',e:'🧼'},{w:'صندوق',e:'📦'},{w:'صديق',e:'👫'},{w:'صحراء',e:'🏜️'}],
     sentences:['الصقر يطير.','الصاروخ سريع.','صديقي طيب.'],
     game:{title:'اصطاد الصاد 🦅',items:[{e:'🦅',c:true},{e:'🌙',c:false},{e:'🚀',c:true},{e:'🍕',c:false},{e:'🧼',c:true},{e:'🎸',c:false},{e:'📦',c:true},{e:'🌊',c:false}]},
-    color:'#FBE9E7', ts:465
+    color:'#FBE9E7'
   },
   {
     ar:'ض', name:'ضاد', img:'dhad', video:'dhad',
@@ -151,7 +151,7 @@ const LETTERS = [
     words:[{w:'ضفدع',e:'🐸'},{w:'ضوء',e:'💡'},{w:'ضيف',e:'🤝'},{w:'ضرس',e:'🦷'},{w:'ضباب',e:'🌫️'},{w:'ضخم',e:'🐘'}],
     sentences:['الضفدع يقفز.','الضوء مضيء.','الضيف كريم.'],
     game:{title:'اصطاد الضاد 🐸',items:[{e:'🐸',c:true},{e:'🌙',c:false},{e:'💡',c:true},{e:'🍕',c:false},{e:'🤝',c:true},{e:'⭐',c:false},{e:'🐘',c:true},{e:'🎮',c:false}]},
-    color:'#F3E5F5', ts:500
+    color:'#F3E5F5'
   },
   {
     ar:'ط', name:'طاء', img:'taa2', video:'taa2',
@@ -161,7 +161,7 @@ const LETTERS = [
     words:[{w:'طائر',e:'🐦'},{w:'طبيب',e:'👨‍⚕️'},{w:'طماطم',e:'🍅'},{w:'طفل',e:'👶'},{w:'طاولة',e:'🪑'},{w:'طويل',e:'🦒'}],
     sentences:['الطائر يغني.','الطبيب مهم.','الطماطم حمراء.'],
     game:{title:'اصطاد الطاء 🐦',items:[{e:'🐦',c:true},{e:'🌙',c:false},{e:'👨‍⚕️',c:true},{e:'🌊',c:false},{e:'🍅',c:true},{e:'🎸',c:false},{e:'👶',c:true},{e:'🐟',c:false}]},
-    color:'#E8F5E9', ts:535
+    color:'#E8F5E9'
   },
   {
     ar:'ظ', name:'ظاء', img:'dhaa', video:'dhaa',
@@ -171,7 +171,7 @@ const LETTERS = [
     words:[{w:'ظبي',e:'🦌'},{w:'ظل',e:'🌳'},{w:'ظهر',e:'🔆'},{w:'ظرف',e:'✉️'},{w:'ظفر',e:'💅'},{w:'ظلام',e:'🌑'}],
     sentences:['الظبي سريع.','الظل بارد.','الظهر مشرق.'],
     game:{title:'اصطاد الظاء 🦌',items:[{e:'🦌',c:true},{e:'🌙',c:false},{e:'🌳',c:true},{e:'🍕',c:false},{e:'✉️',c:true},{e:'🎮',c:false},{e:'🌑',c:true},{e:'🐱',c:false}]},
-    color:'#E3F2FD', ts:570
+    color:'#E3F2FD'
   },
   {
     ar:'ع', name:'عين', img:'ain', video:'ain',
@@ -181,7 +181,7 @@ const LETTERS = [
     words:[{w:'عصفور',e:'🐦'},{w:'عنب',e:'🍇'},{w:'عسل',e:'🍯'},{w:'علم',e:'🏳️'},{w:'عين',e:'👁️'},{w:'عروس',e:'👰'}],
     sentences:['العصفور يغني.','العنب حلو.','العسل لذيذ.'],
     game:{title:'اصطاد العين 🍇',items:[{e:'🐦',c:true},{e:'🌙',c:false},{e:'🍇',c:true},{e:'🍕',c:false},{e:'🍯',c:true},{e:'⭐',c:false},{e:'👁️',c:true},{e:'🎸',c:false}]},
-    color:'#FFF8E1', ts:605
+    color:'#FFF8E1'
   },
   {
     ar:'غ', name:'غين', img:'ghain', video:'ghain',
@@ -191,7 +191,7 @@ const LETTERS = [
     words:[{w:'غزال',e:'🦌'},{w:'غيمة',e:'⛅'},{w:'غابة',e:'🌲'},{w:'غوريلا',e:'🦍'},{w:'غناء',e:'🎤'},{w:'غسيل',e:'🫧'}],
     sentences:['الغزال رشيق.','الغيمة بيضاء.','الغابة جميلة.'],
     game:{title:'اصطاد الغين 🦌',items:[{e:'🦌',c:true},{e:'🌙',c:false},{e:'⛅',c:true},{e:'🍕',c:false},{e:'🌲',c:true},{e:'🎸',c:false},{e:'🦍',c:true},{e:'🌊',c:false}]},
-    color:'#EFEBE9', ts:640
+    color:'#EFEBE9'
   },
   {
     ar:'ف', name:'فاء', img:'faa', video:'faa',
@@ -201,7 +201,7 @@ const LETTERS = [
     words:[{w:'فيل',e:'🐘'},{w:'فراشة',e:'🦋'},{w:'فاكهة',e:'🍑'},{w:'فطر',e:'🍄'},{w:'فنجان',e:'☕'},{w:'فضاء',e:'🚀'}],
     sentences:['الفيل ضخم.','الفراشة جميلة.','أحب الفاكهة.'],
     game:{title:'اصطاد الفاء 🦋',items:[{e:'🐘',c:true},{e:'🌙',c:false},{e:'🦋',c:true},{e:'🐟',c:false},{e:'🍑',c:true},{e:'⭐',c:false},{e:'🍄',c:true},{e:'🎮',c:false}]},
-    color:'#E8EAF6', ts:675
+    color:'#E8EAF6'
   },
   {
     ar:'ق', name:'قاف', img:'qaf', video:'qaf',
@@ -211,7 +211,7 @@ const LETTERS = [
     words:[{w:'قطة',e:'🐱'},{w:'قمر',e:'🌙'},{w:'قلب',e:'❤️'},{w:'قلم',e:'✏️'},{w:'قرد',e:'🐒'},{w:'قصة',e:'📖'}],
     sentences:['القطة لطيفة.','القمر مضيء.','أحب القراءة.'],
     game:{title:'اصطاد القاف 🐱',items:[{e:'🐱',c:true},{e:'🌸',c:false},{e:'🌙',c:true},{e:'🍕',c:false},{e:'❤️',c:true},{e:'🎸',c:false},{e:'✏️',c:true},{e:'🌊',c:false}]},
-    color:'#FCE4EC', ts:710
+    color:'#FCE4EC'
   },
   {
     ar:'ك', name:'كاف', img:'kaf', video:'kaf',
@@ -221,7 +221,7 @@ const LETTERS = [
     words:[{w:'كلب',e:'🐕'},{w:'كتاب',e:'📚'},{w:'كرة',e:'⚽'},{w:'كعكة',e:'🎂'},{w:'كوكب',e:'🪐'},{w:'كنغر',e:'🦘'}],
     sentences:['الكلب وفي.','الكتاب مفيد.','أحب الكرة.'],
     game:{title:'اصطاد الكاف 🐕',items:[{e:'🐕',c:true},{e:'🌙',c:false},{e:'📚',c:true},{e:'🍕',c:false},{e:'⚽',c:true},{e:'⭐',c:false},{e:'🎂',c:true},{e:'🐟',c:false}]},
-    color:'#E0F2F1', ts:745
+    color:'#E0F2F1'
   },
   {
     ar:'ل', name:'لام', img:'lam', video:'lam',
@@ -231,7 +231,7 @@ const LETTERS = [
     words:[{w:'ليمون',e:'🍋'},{w:'لبن',e:'🥛'},{w:'لعبة',e:'🎮'},{w:'لفت',e:'🥬'},{w:'لحم',e:'🥩'},{w:'لؤلؤة',e:'🪨'}],
     sentences:['الليمون حامض.','اللبن مفيد.','أحب اللعب.'],
     game:{title:'اصطاد اللام 🍋',items:[{e:'🍋',c:true},{e:'🌙',c:false},{e:'🥛',c:true},{e:'🍕',c:false},{e:'🎮',c:true},{e:'🎸',c:false},{e:'🥬',c:true},{e:'🌊',c:false}]},
-    color:'#E8F5E9', ts:780
+    color:'#E8F5E9'
   },
   {
     ar:'م', name:'ميم', img:'meem', video:'meem',
@@ -241,7 +241,7 @@ const LETTERS = [
     words:[{w:'مدرسة',e:'🏫'},{w:'موز',e:'🍌'},{w:'مطر',e:'🌧️'},{w:'مسجد',e:'🕌'},{w:'مروحة',e:'💨'},{w:'مرآة',e:'🪞'}],
     sentences:['المدرسة مهمة.','الموز مفيد.','المطر جميل.'],
     game:{title:'اصطاد الميم 😊',items:[{e:'🏫',c:true},{e:'🌙',c:false},{e:'🍌',c:true},{e:'🐟',c:false},{e:'🌧️',c:true},{e:'⭐',c:false},{e:'🕌',c:true},{e:'🎮',c:false}]},
-    color:'#F3E5F5', ts:815
+    color:'#F3E5F5'
   },
   {
     ar:'ن', name:'نون', img:'nun', video:'nun',
@@ -251,7 +251,7 @@ const LETTERS = [
     words:[{w:'نملة',e:'🐜'},{w:'نجمة',e:'⭐'},{w:'نمر',e:'🐯'},{w:'نافذة',e:'🪟'},{w:'نحلة',e:'🐝'},{w:'نور',e:'💡'}],
     sentences:['النملة مجتهدة.','النجمة تلمع.','النمر قوي.'],
     game:{title:'اصطاد النون ⭐',items:[{e:'🐜',c:true},{e:'🌙',c:false},{e:'⭐',c:true},{e:'🍕',c:false},{e:'🐯',c:true},{e:'🎸',c:false},{e:'🐝',c:true},{e:'🌊',c:false}]},
-    color:'#E3F2FD', ts:850
+    color:'#E3F2FD'
   },
   {
     ar:'هـ', name:'هاء', img:'haa2', video:'haa2',
@@ -261,7 +261,7 @@ const LETTERS = [
     words:[{w:'هرة',e:'🐈'},{w:'هلال',e:'🌙'},{w:'هدية',e:'🎁'},{w:'هاتف',e:'📱'},{w:'هواء',e:'💨'},{w:'هدف',e:'🎯'}],
     sentences:['الهرة تموء.','الهلال جميل.','الهدية سارة.'],
     game:{title:'اصطاد الهاء 🎁',items:[{e:'🐈',c:true},{e:'🌸',c:false},{e:'🌙',c:true},{e:'🐟',c:false},{e:'🎁',c:true},{e:'⭐',c:false},{e:'📱',c:true},{e:'🎮',c:false}]},
-    color:'#FFF3E0', ts:885
+    color:'#FFF3E0'
   },
   {
     ar:'و', name:'واو', img:'waw', video:'waw',
@@ -271,7 +271,7 @@ const LETTERS = [
     words:[{w:'وردة',e:'🌹'},{w:'وطن',e:'🏡'},{w:'ورقة',e:'🍃'},{w:'وجه',e:'😊'},{w:'ولد',e:'👦'},{w:'وقت',e:'⏰'}],
     sentences:['الوردة حمراء.','الوطن عزيز.','الولد مؤدب.'],
     game:{title:'اصطاد الواو 🌹',items:[{e:'🌹',c:true},{e:'🌙',c:false},{e:'🏡',c:true},{e:'🍕',c:false},{e:'🍃',c:true},{e:'🎸',c:false},{e:'😊',c:true},{e:'🌊',c:false}]},
-    color:'#E0F7FA', ts:920
+    color:'#E0F7FA'
   },
   {
     ar:'ي', name:'ياء', img:'yaa', video:'yaa',
@@ -281,7 +281,7 @@ const LETTERS = [
     words:[{w:'يمامة',e:'🕊️'},{w:'يسمين',e:'🌸'},{w:'يد',e:'🤚'},{w:'يقطين',e:'🎃'},{w:'يوم',e:'📅'},{w:'يقين',e:'💫'}],
     sentences:['اليمامة بيضاء.','اليد جميلة.','اليوم جميل.'],
     game:{title:'اصطاد الياء 🕊️',items:[{e:'🕊️',c:true},{e:'🌙',c:false},{e:'🌸',c:true},{e:'🍕',c:false},{e:'🤚',c:true},{e:'⭐',c:false},{e:'🎃',c:true},{e:'🎮',c:false}]},
-    color:'#F9FBE7', ts:955
+    color:'#F9FBE7'
   }
 ];
 
